@@ -8,8 +8,16 @@ class Car @Inject constructor(
     var wheel: Wheel
 ) {
 
+    //Inject sequence: Constructor, Field, Method
+
     companion object {
         const val TAG: String = "CAR"
+    }
+
+    //Method Injection
+    @Inject
+    fun remoteCar(remote: Remote) {
+        remote.setListener(this)
     }
 
     fun drive() {

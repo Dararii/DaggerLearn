@@ -2,6 +2,8 @@ package com.essensift.daggerlearn
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.essensift.daggerlearn.car.Car
+import com.essensift.daggerlearn.car.dagger.DaggerCarComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

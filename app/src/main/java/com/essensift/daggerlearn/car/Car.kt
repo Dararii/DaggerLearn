@@ -1,4 +1,4 @@
-package com.essensift.daggerlearn
+package com.essensift.daggerlearn.car
 
 import android.util.Log
 import javax.inject.Inject
@@ -21,6 +21,7 @@ class Car @Inject constructor(
     }
 
     fun drive() {
+        engine.startEngine()
         Log.d(TAG, "driving..")
     }
 }

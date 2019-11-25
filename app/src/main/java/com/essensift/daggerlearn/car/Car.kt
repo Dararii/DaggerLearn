@@ -4,6 +4,7 @@ import android.util.Log
 import javax.inject.Inject
 
 class Car @Inject constructor(
+    var driver: Driver,
     var engine: Engine,
     var wheel: Wheel
 ) {
@@ -22,6 +23,6 @@ class Car @Inject constructor(
 
     fun drive() {
         engine.startEngine()
-        Log.d(TAG, "driving..")
+        Log.d(TAG, "$driver driving.. $this")
     }
 }

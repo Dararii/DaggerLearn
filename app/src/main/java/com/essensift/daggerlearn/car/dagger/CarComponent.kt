@@ -5,7 +5,9 @@ import com.essensift.daggerlearn.car.Car
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [WheelModule::class, PetrolEngineModule::class])
 interface CarComponent {
 

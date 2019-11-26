@@ -2,10 +2,12 @@ package com.essensift.daggerlearn.car.dagger
 
 import com.essensift.daggerlearn.MainActivity
 import com.essensift.daggerlearn.car.Car
+import dagger.BindsInstance
 import dagger.Subcomponent
+import javax.inject.Named
 
 @PerActivity
-@Subcomponent(modules = [WheelModule::class, DieselEngineModule::class])
+@Subcomponent(modules = [WheelModule::class, PetrolEngineModule::class])
 interface ActivityComponent {
 
     fun getCar(): Car
@@ -25,5 +27,17 @@ interface ActivityComponent {
 
         fun build(): ActivityComponent
     }*/
+
+    @Subcomponent.Builder
+    interface Builder {
+
+        @BindsInstance
+        fun horsePower(@Named("HP") hp: Int): Builder
+
+        @BindsInstance
+        fun engineCapacity(@Named("CAPACITY") capacity: Int): Builder
+
+        fun build(): ActivityComponent
+    }
 
 }

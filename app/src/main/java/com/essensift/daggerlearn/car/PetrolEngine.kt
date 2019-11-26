@@ -4,7 +4,7 @@ import android.util.Log
 import javax.inject.Inject
 import javax.inject.Named
 
-class PetrolEngine @Inject constructor(
+data class PetrolEngine @Inject constructor(
     @Named("HP") var hp: Int,
     @Named("CAPACITY") var capacity: Int
 ) : Engine {

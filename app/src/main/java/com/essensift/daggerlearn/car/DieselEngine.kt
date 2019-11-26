@@ -3,7 +3,7 @@ package com.essensift.daggerlearn.car
 import android.util.Log
 import javax.inject.Inject
 
-class DieselEngine @Inject constructor(var hp: Int) : Engine {
+data class DieselEngine @Inject constructor(var hp: Int) : Engine {
 
     companion object {
         const val TAG = "DIESEL_ENGINE"

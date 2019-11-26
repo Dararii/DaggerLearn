@@ -3,6 +3,7 @@ package com.essensift.daggerlearn
 import android.app.Application
 import com.essensift.daggerlearn.car.dagger.AppComponent
 import com.essensift.daggerlearn.car.dagger.DaggerAppComponent
+import com.essensift.daggerlearn.car.dagger.DriverModule
 
 class DaggerLearnApp : Application() {
 
@@ -15,6 +16,6 @@ class DaggerLearnApp : Application() {
             .engineCapacity(1400)
             .horsePower(120)
             .build()*/
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.factory().create(DriverModule("Darari"))
     }
 }

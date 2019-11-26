@@ -31,11 +31,14 @@ class MainActivity : AppCompatActivity() {
             .appComponent((application as DaggerLearnApp).appComponent)
             .build()*/
 
-        val activityComponent =
+        /*val activityComponent =
             (application as DaggerLearnApp).appComponent.getActivityComponentBuilder()
                 .horsePower(120)
                 .engineCapacity(1200)
-                .build()
+                .build()*/
+        val activityComponent = (application as DaggerLearnApp).appComponent
+            .getActivityComponentFactory()
+            .create(120, 1200)
 
         //Constructor Injection
         //car = carComponent.getCar()

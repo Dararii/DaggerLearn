@@ -1,3 +1,3 @@
 package com.essensift.daggerlearn.car
 
-class Driver
+data class Driver(var name: String)

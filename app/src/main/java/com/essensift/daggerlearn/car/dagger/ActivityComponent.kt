@@ -28,7 +28,7 @@ interface ActivityComponent {
         fun build(): ActivityComponent
     }*/
 
-    @Subcomponent.Builder
+    /*@Subcomponent.Builder
     interface Builder {
 
         @BindsInstance
@@ -38,6 +38,16 @@ interface ActivityComponent {
         fun engineCapacity(@Named("CAPACITY") capacity: Int): Builder
 
         fun build(): ActivityComponent
+    }*/
+
+    @Subcomponent.Factory
+    interface Factory {
+
+        fun create(
+            @BindsInstance @Named("HP") hp: Int,
+            @BindsInstance @Named("CAPACITY") capacity: Int
+        ): ActivityComponent
+
     }
 
 }

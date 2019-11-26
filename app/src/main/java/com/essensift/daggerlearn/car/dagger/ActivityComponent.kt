@@ -5,11 +5,13 @@ import com.essensift.daggerlearn.car.Car
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
-import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [WheelModule::class, PetrolEngineModule::class])
-interface CarComponent {
+@PerActivity
+@Component(
+    dependencies = [AppComponent::class],
+    modules = [WheelModule::class, PetrolEngineModule::class]
+)
+interface ActivityComponent {
 
     fun getCar(): Car
 
@@ -24,7 +26,9 @@ interface CarComponent {
         @BindsInstance
         fun engineCapacity(@Named("CAPACITY") capacity: Int): Builder
 
-        fun build(): CarComponent
+        fun appComponent(appComponent: AppComponent): Builder
+
+        fun build(): ActivityComponent
     }
 
 }

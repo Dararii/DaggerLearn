@@ -1,8 +1,10 @@
 package com.essensift.daggerlearn.car
 
 import android.util.Log
+import com.essensift.daggerlearn.car.dagger.PerActivity
 import javax.inject.Inject
 
+@PerActivity
 class Car @Inject constructor(
     var driver: Driver,
     var engine: Engine,

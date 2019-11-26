@@ -3,7 +3,7 @@ package com.essensift.daggerlearn
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.essensift.daggerlearn.car.Car
-import com.essensift.daggerlearn.car.dagger.DaggerActivityComponent
+import com.essensift.daggerlearn.car.dagger.DieselEngineModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -26,11 +26,14 @@ class MainActivity : AppCompatActivity() {
 
         //val carComponent = (application as DaggerLearnApp).activityComponent
 
-        val activityComponent = DaggerActivityComponent.builder()
+        /*val activityComponent = DaggerActivityComponent.builder()
             .engineCapacity(1400)
             .horsePower(120)
             .appComponent((application as DaggerLearnApp).appComponent)
-            .build()
+            .build()*/
+
+        val activityComponent =
+            (application as DaggerLearnApp).appComponent.getActivityComponent(DieselEngineModule(120))
 
         //Constructor Injection
         //car = carComponent.getCar()
